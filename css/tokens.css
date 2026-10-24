@@ -1,0 +1,37 @@
+/* Design tokens, sampled from the Finance Society logo (assets/brand/logo-master.png).
+   Contrast ratios (WCAG 2.x) are listed against --bg / --surface. */
+:root {
+  /* Colour */
+  --bg: #0B0B0C;        /* logo field, near-black */
+  --surface: #151517;   /* cards, header on scroll */
+  --text: #EEE8DD;      /* champagne ivory, logo highlight lifted   16.13 / 14.96 */
+  --muted: #A39A8C;     /* secondary text                            7.08 /  6.56 */
+  --accent: #C9A96E;    /* gold: buttons, links, focus ring          8.79 /  8.15 */
+  --accent-2: #A89C8B;  /* warm silver, logo mid-tone: rules, tags   7.30 /  6.77 */
+  --border: #2E2B27;    /* hairlines (decorative only)               1.40 /  1.29 */
+  --success: #7DC39A;   /* status: open, confirmed                   9.50 /  8.81 */
+  --warning: #E3B45C;   /* status: limited, closing soon            10.26 /  9.51 */
+  --on-accent: #0B0B0C; /* text on gold buttons                      8.79 on --accent */
+
+  /* Type */
+  --font-display: "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.875rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.25rem, 1.16rem + 0.45vw, 1.5rem);
+  --step-2: clamp(1.6rem, 1.4rem + 0.9vw, 2.1rem);
+  --step-3: clamp(2.1rem, 1.7rem + 1.8vw, 3.2rem);
+  --step-4: clamp(2.6rem, 1.9rem + 3.2vw, 4.6rem);
+
+  /* Space and shape */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: clamp(4rem, 3rem + 5vw, 8rem);
+  --radius: 2px;
+  --measure: 66ch;
+  --container: 1200px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
