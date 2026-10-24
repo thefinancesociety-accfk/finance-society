@@ -13,9 +13,18 @@
   --warning: #E3B45C;   /* status: limited, closing soon            10.26 /  9.51 */
   --on-accent: #0B0B0C; /* text on gold buttons                      8.79 on --accent */
 
+  /* Paper surface, from the society's event collateral (cream cards) */
+  --paper: #EDE6D8;
+  --ink: #141312;       /* text on paper                            14.94 on --paper */
+  --ink-muted: #5A5145; /* secondary text on paper                   6.27 on --paper */
+  --gold-deep: #7A5B22; /* gold text on paper                        5.05 on --paper */
+  --crimson: #9E1B2A;   /* seals and ▼ marks; text only on paper     6.40 on --paper, decorative on --bg */
+
   /* Type */
   --font-display: "Playfair Display", "Iowan Old Style", Georgia, serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --step-5: clamp(3.2rem, 1.6rem + 7.5vw, 9.5rem);
   --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.875rem);
   --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
   --step-1: clamp(1.25rem, 1.16rem + 0.45vw, 1.5rem);

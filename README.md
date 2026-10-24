@@ -86,3 +86,11 @@ text, and that no page contains the society's former name. It warns (but does no
 | `css/main.css` | Layout and components |
 | `*/index.html` | One folder per page; header and footer are repeated in each |
 | `assets/` | Logo, event files, research files, photos |
+| `assets/img/` | Banner images (bull, guilloche, bell, ledger), each as `-960`/`-1920` WebP plus a `-960.jpg` fallback |
+
+## Design and motion
+- The look is black and champagne with cream "paper" sections, taken from the logo and the CA$H IQ collateral. All colours live in `css/tokens.css`.
+- Motion: the market ticker, the headline reveals, the guilloche rosettes, the market line, the page transitions and the cursor glow all switch off for
+  visitors who ask for reduced motion, and the ticker has a Pause button.
+- The ticker shows brand phrases and the next real event from `content.js`. Never put prices or made-up figures in it.
+- To swap a banner image, export it at 1920px wide, then save `name-1920.webp`, `name-960.webp` and `name-960.jpg` in `assets/img/`.

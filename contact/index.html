@@ -24,15 +24,21 @@
   <link rel="apple-touch-icon" href="../assets/brand/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap"></noscript>
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/main.css">
   <script>document.documentElement.className += " js";</script>
 </head>
 <body data-root="../">
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="ticker" data-ticker role="region" aria-label="Society headlines">
+    <div class="ticker-viewport"><div class="ticker-track"><div class="ticker-group"><span>Finance Society</span><span>Research</span><span>Markets</span><span>Careers</span></div></div></div>
+    <button class="ticker-pause" type="button" aria-pressed="false">Pause</button>
+  </div>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../">
@@ -56,26 +62,33 @@
 
   <main id="main">
     <header class="page-head">
+      <div class="page-head-media" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="../assets/img/guilloche-960.webp 960w, ../assets/img/guilloche-1920.webp 1920w" sizes="(min-width: 1600px) 100vw, 60vw">
+          <img src="../assets/img/guilloche-960.jpg" alt="" width="1920" height="948" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
       <div class="container">
         <span class="eyebrow">Contact</span>
-        <h1>Get in touch</h1>
+        <h1 data-split>Get in <em>touch</em></h1>
         <p>For membership, events, research or anything else, write to the society directly.</p>
       </div>
+      <span class="index-num" aria-hidden="true">07 / 07</span>
     </header>
 
     <section class="section">
-      <div class="container grid grid-2">
-        <div class="contact-line">
-          <span class="eyebrow">Email</span>
-          <a data-email href="mailto:thefinancesocietyaccfk@gmail.com">thefinancesocietyaccfk@gmail.com</a>
-        </div>
-        <div class="contact-line">
-          <span class="eyebrow">Where we are</span>
-          <p>Amity College of Commerce and Finance<br>Amity University Kolkata<br>New Town, Kolkata</p>
-        </div>
-        <div class="contact-line" data-socials-block>
-          <span class="eyebrow">Social</span>
-          <ul class="prose" data-socials></ul>
+      <div class="container">
+        <span class="eyebrow">Email</span>
+        <p><a class="big-link" data-email href="mailto:thefinancesocietyaccfk@gmail.com">thefinancesocietyaccfk@gmail.com</a></p>
+        <div class="split" style="margin-top: var(--space-5)">
+          <div class="reveal">
+            <span class="eyebrow">Where we are</span>
+            <p class="lead">Amity College of Commerce and Finance<br>Amity University Kolkata<br>New Town, Kolkata</p>
+          </div>
+          <div class="reveal" data-socials-block>
+            <span class="eyebrow">Social</span>
+            <ul class="prose" data-socials></ul>
+          </div>
         </div>
       </div>
     </section>
@@ -106,6 +119,7 @@
           <div data-socials-block><ul data-socials></ul></div>
         </div>
       </div>
+      <p class="wordmark" aria-hidden="true">Finance <em>Society</em></p>
       <div class="footer-base">
         <p>&copy; <span data-year>2026</span> Finance Society, Amity University Kolkata</p>
         <p>Student research for educational purposes. Not investment advice.</p>

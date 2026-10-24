@@ -24,15 +24,21 @@
   <link rel="apple-touch-icon" href="../assets/brand/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap"></noscript>
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/main.css">
   <script>document.documentElement.className += " js";</script>
 </head>
 <body data-root="../">
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="ticker" data-ticker role="region" aria-label="Society headlines">
+    <div class="ticker-viewport"><div class="ticker-track"><div class="ticker-group"><span>Finance Society</span><span>Research</span><span>Markets</span><span>Careers</span></div></div></div>
+    <button class="ticker-pause" type="button" aria-pressed="false">Pause</button>
+  </div>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../">
@@ -56,57 +62,71 @@
 
   <main id="main">
     <header class="page-head">
+      <div class="page-head-media" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="../assets/img/guilloche-960.webp 960w, ../assets/img/guilloche-1920.webp 1920w" sizes="(min-width: 1600px) 100vw, 60vw">
+          <img src="../assets/img/guilloche-960.jpg" alt="" width="1920" height="948" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
       <div class="container">
         <span class="eyebrow">About</span>
-        <h1>A society built on work, not titles</h1>
-        <p>The Finance Society is a student-run, faculty-mentored society based at Amity College of Commerce and Finance, Kolkata, and open to students across Amity University Kolkata.</p>
+        <h1 data-split>Built on work, <em>not titles</em></h1>
+        <p>A student-run, faculty-mentored society based at Amity College of Commerce and Finance, Kolkata, and open to students across Amity University Kolkata.</p>
       </div>
+      <span class="index-num" aria-hidden="true">02 / 07</span>
     </header>
 
-    <section class="section" aria-labelledby="mission">
-      <div class="container grid grid-2">
-        <div><span class="eyebrow">Mission</span><h2 id="mission">Closing the gap between theory and practice</h2></div>
-        <div class="prose">
-          <p class="lead">Our curriculum gives students strong theoretical grounding. The society exists to add what recruiters look for alongside it: the ability to build a model, read an annual report, form a view on a market and present it clearly.</p>
-          <p class="muted">Members leave each year with work they can point to, not just events they attended.</p>
-        </div>
+    <section class="paper manifesto" aria-labelledby="mission">
+      <div class="container">
+        <span class="eyebrow">Mission</span>
+        <h2 id="mission" class="visually-hidden">Mission</h2>
+        <p class="manifesto-text lit">Our curriculum gives strong theory. The society adds what recruiters look for beside it: the ability to <em>build a model</em>, read an annual report, form a view on a market and present it clearly.</p>
+        <div class="manifesto-foot mono"><span>Members leave each year with work they can point to</span></div>
       </div>
     </section>
 
     <section class="section" aria-labelledby="semester">
       <div class="container">
-        <span class="eyebrow">The programme</span>
-        <h2 id="semester">What members do in a semester</h2>
-        <ul class="rows">
-          <li><span>Skill workshops</span><p>A training ladder from Excel for finance to three-statement modelling, DCF valuation, reading annual reports and ratio analysis.</p></li>
-          <li><span>Research</span><p>Company analyses and sector notes written by members, reviewed for sourcing and format, and published on this site.</p></li>
-          <li><span>Markets</span><p>Discussion of markets, policy and current affairs, with quizzes and debates that reward preparation and clear argument.</p></li>
-          <li><span>Guest sessions</span><p>Talks and interactions with practitioners and alumni, arranged through the Faculty Mentor.</p></li>
+        <div class="section-head">
+          <div><span class="eyebrow">The programme</span><h2 id="semester" data-split>A semester <em>inside</em></h2></div>
+          <p>Swipe or scroll across. Four strands run through every term.</p>
+        </div>
+        <div class="rail" tabindex="0" role="region" aria-label="What members do in a semester">
+          <article class="card"><span class="num">01</span><h3>Skill workshops</h3><p>A training ladder from Excel for finance to three-statement modelling, DCF valuation, reading annual reports and ratio analysis.</p></article>
+          <article class="card"><span class="num">02</span><h3>Research</h3><p>Company analyses and sector notes written by members, reviewed for sourcing and format, and published on this site.</p></article>
+          <article class="card"><span class="num">03</span><h3>Markets</h3><p>Discussion of markets, policy and current affairs, with quizzes and debates that reward preparation and clear argument.</p></article>
+          <article class="card"><span class="num">04</span><h3>Guest sessions</h3><p>Talks and interactions with practitioners and alumni, arranged through the Faculty Mentor.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="charter" style="border-top:1px solid var(--border)">
+      <div class="container split">
+        <div class="sticky">
+          <span class="eyebrow">Charter summary · proposed structure, subject to approval</span>
+          <h2 id="charter" data-split>How the society <em>runs</em></h2>
+          <p class="muted">Authority flows down from the faculty layer; accountability flows up through the Council. Every post carries defined deliverables, and advancement is earned on demonstrated work, not seniority of batch.</p>
+        </div>
+        <ul class="index charter">
+          <li class="reveal"><span class="num">I</span><h3>Faculty Advisory Committee</h3><p>Academic oversight of all activity. Approves the annual plan, the event calendar and expenditure, and chairs the selection of office bearers.</p></li>
+          <li class="reveal"><span class="num">II</span><h3>Core Executive Council</h3><p>Seven posts with single charters: President, Vice-President, Treasurer, and Heads of Modelling &amp; Training, Research &amp; Analysis, Events &amp; Outreach, and Marketing &amp; Media. Office is held for one academic year.</p></li>
+          <li class="reveal"><span class="num">III</span><h3>Associates</h3><p>Six posts carrying the standing work of each function: training, research, editorial review, events, design and records.</p></li>
+          <li class="reveal"><span class="num">IV</span><h3>Directorate</h3><p>A merit tier, conferred each semester on members who have delivered. Each Director owns one named initiative and mentors newer members. It carries no line authority.</p></li>
+          <li class="reveal"><span class="num">§</span><h3>Financial controls</h3><p>Every collection is receipted, payments need two signatures, and the books are placed before the Faculty Mentor each semester.</p></li>
         </ul>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="charter">
-      <div class="container">
-        <span class="eyebrow">Charter summary · proposed structure, subject to approval</span>
-        <h2 id="charter">How the society runs</h2>
-        <p class="lead">Authority flows down from the faculty layer; accountability flows up through the Council. Every post carries defined deliverables, and advancement is earned on demonstrated work, not seniority of batch.</p>
-        <ul class="rows">
-          <li><span>Faculty Advisory Committee</span><p>Academic oversight of all activity. Approves the annual plan, the event calendar and expenditure, and chairs the selection of office bearers.</p></li>
-          <li><span>Core Executive Council</span><p>Seven posts with single charters: President, Vice-President, Treasurer, and Heads of Modelling &amp; Training, Research &amp; Analysis, Events &amp; Outreach, and Marketing &amp; Media. Office is held for one academic year.</p></li>
-          <li><span>Associates</span><p>Six posts carrying the standing work of each function: training, research, editorial review, events, design and records.</p></li>
-          <li><span>Directorate</span><p>A merit tier, conferred each semester on members who have delivered. Each Director owns one named initiative and mentors newer members. It carries no line authority.</p></li>
-          <li><span>Financial controls</span><p>Every collection is receipted, payments need two signatures, and the books are placed before the Faculty Mentor each semester.</p></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="mentor-title">
-      <div class="container grid grid-2">
-        <div><span class="eyebrow">Faculty</span><h2 id="mentor-title">Faculty Mentor</h2></div>
-        <div>
-          <p class="lead" data-mentor>Dr Sreya Bar</p>
-          <p class="muted">Faculty Mentor, Amity College of Commerce and Finance, Kolkata</p>
+    <section class="section paper" aria-labelledby="mentor-title">
+      <div class="container split">
+        <div><span class="eyebrow">Faculty</span><h2 id="mentor-title" data-split>Faculty <em>Mentor</em></h2></div>
+        <div class="medallion reveal">
+          <div class="medallion-seal" aria-hidden="true"><svg data-medallion></svg><span style="color:var(--ink)">SB</span></div>
+          <div>
+            <h3 data-mentor>Dr Sreya Bar</h3>
+            <p class="role" style="color:var(--gold-deep)">Faculty Mentor</p>
+            <p class="muted">Amity College of Commerce and Finance, Kolkata</p>
+          </div>
         </div>
       </div>
     </section>
@@ -137,6 +157,7 @@
           <div data-socials-block><ul data-socials></ul></div>
         </div>
       </div>
+      <p class="wordmark" aria-hidden="true">Finance <em>Society</em></p>
       <div class="footer-base">
         <p>&copy; <span data-year>2026</span> Finance Society, Amity University Kolkata</p>
         <p>Student research for educational purposes. Not investment advice.</p>

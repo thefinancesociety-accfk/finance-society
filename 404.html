@@ -24,15 +24,21 @@
   <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap"></noscript>
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/main.css">
   <script>document.documentElement.className += " js";</script>
 </head>
 <body data-root="/">
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="ticker" data-ticker role="region" aria-label="Society headlines">
+    <div class="ticker-viewport"><div class="ticker-track"><div class="ticker-group"><span>Finance Society</span><span>Research</span><span>Markets</span><span>Careers</span></div></div></div>
+    <button class="ticker-pause" type="button" aria-pressed="false">Pause</button>
+  </div>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="/">
@@ -55,11 +61,12 @@
   </header>
 
   <main id="main">
-    <section class="page-head" style="border:0">
+    <section class="hero" style="min-height:70svh">
+      <svg class="rosette" aria-hidden="true"></svg>
       <div class="container">
-        <span class="eyebrow">404</span>
-        <h1>Page not found</h1>
-        <p>The page you are looking for has moved or does not exist.</p>
+        <span class="eyebrow">404 · Margin call</span>
+        <h1><span class="mask"><span class="line">Page not</span></span><span class="mask"><span class="line"><em>found</em></span></span></h1>
+        <p class="lead">The page you are looking for has moved or does not exist.</p>
         <div class="btn-row"><a class="btn" href="/">Back to the home page</a><a class="btn btn-secondary" href="/events/">See events</a></div>
       </div>
     </section>
@@ -90,6 +97,7 @@
           <div data-socials-block><ul data-socials></ul></div>
         </div>
       </div>
+      <p class="wordmark" aria-hidden="true">Finance <em>Society</em></p>
       <div class="footer-base">
         <p>&copy; <span data-year>2026</span> Finance Society, Amity University Kolkata</p>
         <p>Student research for educational purposes. Not investment advice.</p>
