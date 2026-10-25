@@ -64,8 +64,9 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
         <picture>
-          <source type="image/webp" srcset="./assets/img/hero-bull-960.webp 960w, ./assets/img/hero-bull-1920.webp 1920w" sizes="100vw">
-          <img src="./assets/img/hero-bull-960.jpg" alt="" width="1920" height="1080" fetchpriority="high" decoding="async">
+          <source media="(min-width: 821px)" type="image/webp" srcset="./assets/img/hero-bull-wide-960.webp 960w, ./assets/img/hero-bull-wide-1280.webp 1280w" sizes="60vw">
+          <source type="image/webp" srcset="./assets/img/hero-bull-960.webp 960w, ./assets/img/hero-bull-1920.webp 1280w" sizes="100vw">
+          <img src="./assets/img/hero-bull-960.jpg" alt="" width="1136" height="1007" fetchpriority="high" decoding="async">
         </picture>
       </div>
       <svg class="rosette" aria-hidden="true"></svg>
