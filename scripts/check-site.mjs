@@ -28,7 +28,8 @@ function walk(dir, out = []) {
   return out;
 }
 const files = walk(ROOT);
-const htmlFiles = files.filter((f) => f.endsWith(".html"));
+// Site pages only: HTML under scripts/ (e.g. the social banner source) is tooling, not a page.
+const htmlFiles = files.filter((f) => f.endsWith(".html") && !rel(f).startsWith("scripts/"));
 
 // Resolve a site URL path (as served) to a file on disk.
 function resolveTarget(fromFile, href) {

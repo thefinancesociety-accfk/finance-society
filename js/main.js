@@ -138,11 +138,12 @@
       (e.venue ? '<p class="mono">' + esc(e.venue) + "</p>" : "");
     if (e.photos && e.photos.length) {
       body += '<div class="event-photos">' + e.photos.map(function (p) {
-        return '<img src="' + esc(asset(p.src)) + '" alt="' + esc(p.alt) + '" loading="lazy" width="400" height="300">';
+        return '<img src="' + esc(asset(p.src)) + '" alt="' + esc(p.alt) + '" loading="lazy" decoding="async" width="1200" height="900">';
       }).join("") + "</div>";
     }
-    return '<li class="reveal" id="' + esc(e.id) + '"><details><summary>' +
-      '<span class="date">' + (a ? two(a.getDate()) + " " + MONTHS[a.getMonth()].slice(0, 3) + " " + a.getFullYear() : "Earlier") + "</span>" +
+    // Rows with photos start open so the gallery is seen without a click.
+    return '<li class="reveal" id="' + esc(e.id) + '"><details' + (e.photos && e.photos.length ? " open" : "") + "><summary>" +
+      '<span class="date">' + (a ? two(a.getDate()) + " " + MONTHS[a.getMonth()].slice(0, 3) + " " + a.getFullYear() : "") + "</span>" +
       '<span class="title">' + esc(e.title) + "</span>" +
       '<span class="kind">' + esc(e.kind) + "</span>" +
       '<span class="plus" aria-hidden="true">+</span></summary>' +

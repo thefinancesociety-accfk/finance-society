@@ -392,8 +392,10 @@ a.index-row:hover .go { transform: translateX(6px) rotate(-45deg); }
 .archive .body { display: grid; grid-template-columns: 9rem 1fr; gap: var(--space-3); padding-bottom: var(--space-4); }
 .archive .body > div { grid-column: 2; color: var(--muted); }
 .archive .body p { color: var(--muted); }
-.event-photos { display: grid; gap: var(--space-1); grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); margin-top: var(--space-2); }
-.event-photos img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+.event-photos { display: grid; gap: var(--space-2); grid-template-columns: repeat(2, 1fr); margin-top: var(--space-3); max-width: 60rem; }
+.event-photos img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; border-radius: 4px; filter: grayscale(0.35) contrast(1.05); transition: filter 0.5s var(--ease); }
+.event-photos img:hover { filter: none; }
+@media (max-width: 560px) { .event-photos { grid-template-columns: 1fr; } }
 @media (max-width: 720px) {
   .archive summary { grid-template-columns: 1fr 2rem; gap: 0.3rem var(--space-2); }
   .archive .date { grid-column: 1; grid-row: 1; }

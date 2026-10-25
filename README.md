@@ -94,3 +94,7 @@ text, and that no page contains the society's former name. It warns (but does no
   visitors who ask for reduced motion, and the ticker has a Pause button.
 - The ticker shows brand phrases and the next real event from `content.js`. Never put prices or made-up figures in it.
 - To swap a banner image, export it at 1920px wide, then save `name-1920.webp`, `name-960.webp` and `name-960.jpg` in `assets/img/`.
+
+## Social banners
+`scripts/social/linkedin-banner.html` is the source of the LinkedIn banner (1584×396). Edit the text there, then run
+`node scripts/social/render.mjs`; the PNG is written to `social/linkedin-banner-1584x396.png`.

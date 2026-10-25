@@ -18,6 +18,12 @@ try {
     for (const [name, path] of PAGES) {
       await page.goto(url + path, { waitUntil: "networkidle0" });
       await page.evaluate(() => document.fonts.ready);
+      // Scroll through once so lazy-loaded images are fetched before the full-page capture.
+      await page.evaluate(async () => {
+        for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 60)); }
+        window.scrollTo(0, 0);
+        await Promise.all([...document.images].map((i) => (i.complete ? 0 : new Promise((r) => { i.onload = i.onerror = r; }))));
+      });
       const file = join(OUT, `${name}-${width}.png`);
       await page.screenshot({ path: file, fullPage: true });
       written.push(file);

@@ -17,8 +17,8 @@ window.SITE = {
 
   // Leave "" until the page exists; empty links are hidden everywhere.
   socials: {
-    instagram: "",
-    linkedin: ""
+    instagram: "https://www.instagram.com/thefinancesocietyaccfk/",
+    linkedin: "https://www.linkedin.com/in/finance-society-accfk"
   },
 
   facultyMentor: {
@@ -123,7 +123,12 @@ window.SITE = {
       register: null,
       attachments: [],
       recap: "Session I covered the regulatory perimeter, the disclosure-based regime, current fraud typologies and grievance redress through SCORES and Online Dispute Resolution. Session II covered market structure, the main categories of investment risk, mutual funds and the mechanics of opening a Demat account. Participants left with a checklist for verifying any intermediary before transacting.",
-      photos: [],
+      photos: [
+        { src: "assets/img/events/risa-session-1.webp", alt: "Mr Akshay Kumar Singh of SEBI's Eastern Regional Office speaking from the lectern during Session I" },
+        { src: "assets/img/events/risa-session-2.webp", alt: "Mr Pratyush Sengupta of BSE presenting the key players in the securities market during Session II" },
+        { src: "assets/img/events/risa-audience.webp", alt: "Students filling the seminar hall in E Block for the seminar" },
+        { src: "assets/img/events/risa-felicitation.webp", alt: "A resource person being felicitated with a memento on stage" }
+      ],
       publish: true
     },
     {
