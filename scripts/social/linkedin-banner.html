@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Source for the LinkedIn banner (1584x396). Render with: node scripts/social/render.mjs -->
+<!-- Source for the LinkedIn banner (1584x396), FS monogram version. Render with: node scripts/social/render.mjs -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -7,12 +7,8 @@
 <style>
   html, body { margin: 0; width: 1584px; height: 396px; overflow: hidden; background: #0B0B0C; }
   .banner { position: relative; width: 1584px; height: 396px; overflow: hidden; color: #EEE8DD; font-family: Inter, sans-serif; }
-  .guilloche { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.32;
-    -webkit-mask: linear-gradient(90deg, #000 55%, transparent 74%); mask: linear-gradient(90deg, #000 55%, transparent 74%); }
-  /* The bull sits on a plain black field, so its image box blends in with no visible edge. */
-  .banner { background: linear-gradient(90deg, #0B0B0C 70%, #000 78%); }
-  .bull { position: absolute; right: 0; top: 4px; height: 352px; width: 397px; object-fit: contain; object-position: right center; filter: brightness(0.7);
-    -webkit-mask: linear-gradient(90deg, transparent 0%, #000 45%); mask: linear-gradient(90deg, transparent 0%, #000 45%); }
+  .guilloche { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.32; }
+  .mark { position: absolute; right: 92px; top: 50%; height: 250px; width: auto; translate: 0 -58%; opacity: 0.95; }
   .shade { position: absolute; inset: 0; background: linear-gradient(90deg, #0B0B0C 0%, rgba(11,11,12,.92) 38%, rgba(11,11,12,.35) 70%, rgba(11,11,12,.15)); }
   /* LinkedIn's profile photo covers the lower-left corner, so the text sits right of it. */
   .copy { position: absolute; left: 470px; top: 78px; }
@@ -30,7 +26,7 @@
 <body>
   <div class="banner">
     <img class="guilloche" src="../../assets/img/guilloche-1920.webp" alt="">
-    <img class="bull" src="../../assets/img/hero-bull-1920.webp" alt="">
+    <img class="mark" src="../../assets/brand/logo-mark.webp" alt="">
     <div class="shade"></div>
     <div class="copy">
       <div class="eyebrow">Amity College of Commerce and Finance, Kolkata</div>
