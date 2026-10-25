@@ -145,7 +145,7 @@ window.SITE = {
       attachments: [],
       recap: "Teams argued for and against motions on whether the Budget’s changes were sufficient, whether they benefit India as a whole, and whether its sectoral allocations were well divided, with structured openings, rebuttals, cross-questioning and closing arguments.",
       photos: [],
-      publish: true
+      publish: false
     },
     {
       id: "market-verdict",
@@ -161,7 +161,7 @@ window.SITE = {
       attachments: [],
       recap: "Six teams debated motions including a digital-only currency for India, the stock market as a wealth-creation tool for the middle class, and the future of ESG investing in Indian capital markets.",
       photos: [],
-      publish: true
+      publish: false
     },
     {
       id: "finquiz",
@@ -177,7 +177,7 @@ window.SITE = {
       attachments: [],
       recap: "Seven teams from all three years of B.Com competed, with the buzzer rounds and audience pop-questions drawing the strongest engagement.",
       photos: [],
-      publish: true
+      publish: false
     }
   ],
 
