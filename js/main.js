@@ -90,8 +90,9 @@
   /* ---------- Events ---------- */
   var events = (S.events || []).filter(function (e) { return e.publish !== false; });
   var t = today();
-  function isUpcoming(e) { var end = parse(e.endDate) || parse(e.date); return end && end >= t; }
-  var upcoming = events.filter(isUpcoming).sort(function (a, b) { return parse(a.date) - parse(b.date); });
+  // An event with no date yet but upcoming: true is listed as upcoming, after the dated ones.
+  function isUpcoming(e) { if (!e.date && e.upcoming) return true; var end = parse(e.endDate) || parse(e.date); return end && end >= t; }
+  var upcoming = events.filter(isUpcoming).sort(function (a, b) { return (parse(a.date) || Infinity) - (parse(b.date) || Infinity); });
   var past = events.filter(function (e) { return !isUpcoming(e); })
     .sort(function (a, b) { return (parse(b.date) || 0) - (parse(a.date) || 0); });
 
@@ -103,11 +104,11 @@
   function ticket(e, isCompact) {
     var a = parse(e.date);
     var meta = [];
-    if (a) meta.push("<li>" + esc(rangeText(e)) + "</li>");
+    meta.push("<li>" + esc(a ? rangeText(e) : "Date to be announced") + "</li>");
     if (e.venue) meta.push("<li>" + esc(e.venue) + "</li>");
     var html = '<article class="ticket reveal" id="' + esc(e.id) + '"><div class="ticket-main">' +
-      '<div class="ticket-date"><span class="ticket-day">' + (a ? dayText(e) : "—") + '</span><span class="ticket-month">' +
-      (a ? MONTHS[a.getMonth()].slice(0, 3) + " " + a.getFullYear() : "Date TBC") + "</span></div><div>" +
+      '<div class="ticket-date"><span class="ticket-day">' + (a ? dayText(e) : "TBA") + '</span><span class="ticket-month">' +
+      (a ? MONTHS[a.getMonth()].slice(0, 3) + " " + a.getFullYear() : "Date to be announced") + "</span></div><div>" +
       '<span class="tag tag-open">' + esc(e.kind) + " · Upcoming</span>" +
       "<h3>" + esc(e.title) + "</h3>" +
       (e.tagline ? '<p class="tagline">' + esc(e.tagline) + "</p>" : "") +
@@ -208,7 +209,7 @@
       ["up", "▲", "Careers"],
       ["dot", "●", "Amity University Kolkata"]
     ];
-    if (upcoming[0]) items.splice(1, 0, ["up", "▲", upcoming[0].title + " · " + rangeText(upcoming[0])]);
+    if (upcoming[0]) items.splice(1, 0, ["up", "▲", upcoming[0].title + " · " + (rangeText(upcoming[0]) || "Date to be announced")]);
     items.push(["down", "▼", "Student research. Not investment advice."]);
     var group = items.map(function (i) { return '<span><b class="' + i[0] + '">' + i[1] + "</b>" + esc(i[2]) + "</span>"; }).join("");
     bar.querySelector(".ticker-track").innerHTML =

@@ -1,0 +1,61 @@
+<!doctype html>
+<!-- Source for the CA$H IQ circular logo (1024x1024, sized for a group profile photo).
+     Render with: node scripts/social/render.mjs -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=block">
+<style>
+  html, body { margin: 0; width: 1024px; height: 1024px; overflow: hidden; background: transparent; }
+  svg { display: block; }
+  .ring-text { font-family: "JetBrains Mono", monospace; font-size: 34px; letter-spacing: 12px; fill: #C9A96E; }
+  .cash { font-family: "Playfair Display", serif; font-weight: 700; font-size: 188px; letter-spacing: -4px; fill: #EEE8DD; }
+  .iq { font-family: "Playfair Display", serif; font-style: italic; font-weight: 500; font-size: 172px; fill: #C9A96E; }
+  .rosette path { fill: none; stroke: #C9A96E; stroke-width: 0.9; opacity: 0.22; }
+</style>
+</head>
+<body>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="46%" r="55%">
+      <stop offset="0" stop-color="#1E1912"/><stop offset="0.7" stop-color="#0E0D0C"/><stop offset="1" stop-color="#0B0B0C"/>
+    </radialGradient>
+    <!-- Ring text paths: top reads clockwise, bottom reads left to right along the lower arc. -->
+    <path id="top" d="M 124 512 A 388 388 0 0 1 900 512"/>
+    <path id="bottom" d="M 100 512 A 412 412 0 0 0 924 512"/>
+  </defs>
+  <circle cx="512" cy="512" r="512" fill="url(#glow)"/>
+  <g class="rosette" id="rosette"></g>
+  <circle cx="512" cy="512" r="470" fill="none" stroke="#C9A96E" stroke-width="3"/>
+  <circle cx="512" cy="512" r="458" fill="none" stroke="#C9A96E" stroke-width="1" opacity="0.7"/>
+  <circle cx="512" cy="512" r="345" fill="none" stroke="#C9A96E" stroke-width="1.5" opacity="0.8"/>
+  <text class="ring-text" text-anchor="middle"><textPath href="#top" startOffset="50%">FINANCE SOCIETY · ACCFK</textPath></text>
+  <text class="ring-text" text-anchor="middle"><textPath href="#bottom" startOffset="50%">WHAT'S YOUR IQ WORTH?</textPath></text>
+  <!-- Small market ticks either side, between the ring texts -->
+  <text x="96" y="524" text-anchor="middle" font-family="JetBrains Mono" font-size="30" fill="#7DC39A">▲</text>
+  <text x="928" y="524" text-anchor="middle" font-family="JetBrains Mono" font-size="30" fill="#D0485A">▼</text>
+  <text class="cash" x="512" y="508" text-anchor="middle">CA$H</text>
+  <line x1="392" y1="548" x2="632" y2="548" stroke="#C9A96E" stroke-width="2"/>
+  <text class="iq" x="512" y="700" text-anchor="middle">IQ</text>
+</svg>
+<script>
+  // Guilloche rosette behind the centre: overlapping hypotrochoids, as on the website.
+  function path(R, r, d, turns, s) {
+    var p = [], n = 1600;
+    for (var i = 0; i <= n; i++) {
+      var t = (i / n) * Math.PI * 2 * turns;
+      var x = (R - r) * Math.cos(t) + d * Math.cos(((R - r) / r) * t);
+      var y = (R - r) * Math.sin(t) - d * Math.sin(((R - r) / r) * t);
+      p.push((512 + x * s).toFixed(1) + " " + (512 + y * s).toFixed(1));
+    }
+    return "M" + p.join("L");
+  }
+  var g = document.getElementById("rosette");
+  [[120, 45, 70, 9, 2.4], [160, 21, 30, 21, 2.15], [96, 36, 52, 3, 2.7]].forEach(function (a) {
+    var el = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    el.setAttribute("d", path(a[0], a[1], a[2], a[3], a[4]));
+    g.appendChild(el);
+  });
+</script>
+</body>
+</html>

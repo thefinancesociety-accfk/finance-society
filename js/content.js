@@ -72,7 +72,7 @@ window.SITE = {
        id: "short-id",                 // lowercase, no spaces; must be unique
        title: "Event name",
        kind: "Quiz",                   // Quiz, Debate, Seminar, Workshop, Talk...
-       date: "2026-11-03",             // start date
+       date: "2026-11-03",             // start date; "" plus upcoming: true shows "Date to be announced"
        endDate: "",                    // optional, for multi-day events
        venue: "",
        summary: "One or two sentences on what the event is.",
@@ -91,20 +91,21 @@ window.SITE = {
       title: "CA$H IQ",
       kind: "Quiz",
       tagline: "What’s your IQ worth?",
-      date: "2026-11-03",
-      endDate: "2026-11-04",
+      date: "",                       // to be announced
+      endDate: "",
+      upcoming: true,
       venue: "E Block, Amity University Kolkata",
       summary: "The Finance Society’s flagship financial literacy quiz. Teams of two are tested on the ideas that run households, markets and economies, from interest and inflation to instruments, institutions and the headlines that move them.",
       details: [
         "Screening: a 5–7 minute interview with the faculty in-charge",
-        "Day one, 3 November — Round I, The Opening Bell, and Round II, The Margin Call (E Block)",
-        "Day two, 4 November — The Final, The Closing Bell, before a live audience (Seminar Hall, 6th Floor, E Block)",
+        "Day one — Round I, The Opening Bell, and Round II, The Margin Call (E Block)",
+        "Day two — The Final, The Closing Bell, before a live audience (Seminar Hall, 6th Floor, E Block)",
         "Teams of two are formed by the faculty in-charge; up to ten participants",
         "Topic areas are circulated to participants at least five days before the event"
       ],
       eligibility: "B.Com and BBA students of ACCFK, ASBK and ABSK, all years.",
       register: { email: true, subject: "Registration: CA$H IQ 2026" },
-      attachments: [{ label: "Event poster (PDF)", href: "assets/events/cash-iq-2026-poster.pdf" }],
+      attachments: [],                // the old poster (assets/events/cash-iq-2026-poster.pdf) shows the earlier dates
       recap: "",
       photos: [],
       publish: true

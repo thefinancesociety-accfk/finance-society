@@ -34,6 +34,7 @@ No photo yet? Use `photo: ""` and the card shows the person's initials.
 },
 ```
 - Events move from **Upcoming** to **Past** by themselves once their date has passed.
+- Date not fixed yet? Use `date: ""` and add `upcoming: true`; the site shows "Date to be announced".
 - The soonest upcoming event appears on the home page automatically.
 - After the event, add a `recap` paragraph and `photos`:
   `photos: [{ src: "assets/img/events/budget-debate-1.webp", alt: "Teams debating in E301" }]`.
@@ -98,3 +99,6 @@ text, and that no page contains the society's former name. It warns (but does no
 ## Social banners
 `scripts/social/linkedin-banner.html` is the source of the LinkedIn banner (1584×396). Edit the text there, then run
 `node scripts/social/render.mjs`; the PNG is written to `social/linkedin-banner-1584x396.png`.
+
+`scripts/social/cash-iq-logo.html` is the CA$H IQ circular logo (1024×1024, for group profile photos). The same command renders it to
+`social/cash-iq-logo-1024.png` (transparent corners) and `social/cash-iq-logo-1024-square.png` (solid background).
