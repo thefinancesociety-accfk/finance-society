@@ -21,9 +21,9 @@
   --crimson: #9E1B2A;   /* seals and ▼ marks; text only on paper     6.40 on --paper, decorative on --bg */
 
   /* Type */
-  --font-display: "Playfair Display", "Iowan Old Style", Georgia, serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --step-5: clamp(3.2rem, 1.6rem + 7.5vw, 9.5rem);
   --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.875rem);
   --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
@@ -40,6 +40,7 @@
   --space-5: 4rem;
   --space-6: clamp(4rem, 3rem + 5vw, 8rem);
   --radius: 2px;
+  --radius-btn: 3px;
   --measure: 66ch;
   --container: 1200px;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);

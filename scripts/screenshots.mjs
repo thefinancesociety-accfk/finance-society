@@ -22,7 +22,11 @@ try {
       await page.evaluate(async () => {
         for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 60)); }
         window.scrollTo(0, 0);
-        await Promise.all([...document.images].map((i) => (i.complete ? 0 : new Promise((r) => { i.onload = i.onerror = r; }))));
+        // Wait for images, but never more than 5 s (an image that never starts loading must not hang the run).
+        await Promise.race([
+          Promise.all([...document.images].map((i) => (i.complete ? 0 : new Promise((r) => { i.onload = i.onerror = r; })))),
+          new Promise((r) => setTimeout(r, 5000))
+        ]);
       });
       const file = join(OUT, `${name}-${width}.png`);
       await page.screenshot({ path: file, fullPage: true });

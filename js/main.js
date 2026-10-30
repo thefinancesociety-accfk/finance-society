@@ -6,7 +6,6 @@
   var root = document.body.getAttribute("data-root") || "./";
   var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
   var SVGNS = "http://www.w3.org/2000/svg";
 
   function esc(s) {
@@ -320,29 +319,6 @@
     var solid = function () { header.classList.toggle("is-solid", window.scrollY > 24); };
     solid();
     addEventListener("scroll", solid, { passive: true });
-  }
-
-  /* ---------- Pointer effects: spotlight and magnetic buttons (mouse only) ---------- */
-  if (finePointer && !reduceMotion) {
-    document.documentElement.classList.add("has-pointer");
-    var mx = 0, my = 0, raf = 0;
-    addEventListener("pointermove", function (e) {
-      mx = e.clientX; my = e.clientY;
-      if (!raf) raf = requestAnimationFrame(function () {
-        document.documentElement.style.setProperty("--mx", mx + "px");
-        document.documentElement.style.setProperty("--my", my + "px");
-        raf = 0;
-      });
-    }, { passive: true });
-    document.querySelectorAll(".magnetic").forEach(function (b) {
-      b.addEventListener("pointermove", function (e) {
-        var r = b.getBoundingClientRect();
-        var dx = Math.max(-8, Math.min(8, (e.clientX - r.left - r.width / 2) * 0.2));
-        var dy = Math.max(-8, Math.min(8, (e.clientY - r.top - r.height / 2) * 0.3));
-        b.style.transform = "translate(" + dx + "px," + dy + "px)";
-      });
-      b.addEventListener("pointerleave", function () { b.style.transform = ""; });
-    });
   }
 
   /* ---------- Reveals: native scroll timelines where supported, IntersectionObserver otherwise ---------- */

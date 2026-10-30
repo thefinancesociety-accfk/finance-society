@@ -24,9 +24,9 @@
   <link rel="apple-touch-icon" href="./assets/brand/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
   <link rel="stylesheet" href="./css/tokens.css">
   <link rel="stylesheet" href="./css/main.css">
   <script>document.documentElement.className += " js";</script>
@@ -34,7 +34,6 @@
 <body data-root="./">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
-  <div class="spotlight" aria-hidden="true"></div>
   <div class="ticker" data-ticker role="region" aria-label="Society headlines">
     <div class="ticker-viewport"><div class="ticker-track"><div class="ticker-group"><span>Finance Society</span><span>Research</span><span>Markets</span><span>Careers</span></div></div></div>
     <button class="ticker-pause" type="button" aria-pressed="false">Pause</button>
@@ -68,8 +67,8 @@
         <h1 id="hero-title"><span class="mask"><span class="line">Finance</span></span><span class="mask"><span class="line"><em>Society</em></span></span></h1>
         <p class="lead fade-up">A student society that turns classroom finance into rigorous research, an informed view of markets, and careers built on demonstrable work.</p>
         <div class="btn-row fade-up d2">
-          <a class="btn magnetic" data-join href="./join/">Join the Society <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn btn-secondary magnetic" href="./events/">Our work</a>
+          <a class="btn" data-join href="./join/">Join the Society <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-secondary" href="./events/">Our work</a>
         </div>
       </div>
       <div class="hero-meta mono" aria-hidden="true">
@@ -89,7 +88,7 @@
 
     <section class="paper manifesto" aria-labelledby="manifesto-title">
       <div class="container">
-        <span class="eyebrow">01 — The brief</span>
+        <span class="eyebrow">The brief</span>
         <h2 id="manifesto-title" class="visually-hidden">Our purpose</h2>
         <p class="manifesto-text lit">Money is a language. We learn to read it in annual reports, to argue it in debate, and to <em>write it in models</em> that hold up to scrutiny.</p>
         <div class="manifesto-foot mono">
@@ -102,7 +101,7 @@
     <section class="section" aria-labelledby="pillars-title">
       <div class="container">
         <div class="section-head">
-          <div><span class="eyebrow">02 — What we do</span><h2 id="pillars-title" data-split>Three <em>pillars</em></h2></div>
+          <div><span class="eyebrow">What we do</span><h2 id="pillars-title" data-split>Three pillars</h2></div>
           <p>Every activity in the society serves one of three ends: better research, a sharper view of markets, and careers built on work you can show.</p>
         </div>
         <ul class="index">
@@ -122,7 +121,7 @@
       </div>
       <div class="container">
         <div class="section-head">
-          <div><span class="eyebrow">03 — Opening bell</span><h2 id="next-title" data-split>Next on the <em>calendar</em></h2></div>
+          <div><span class="eyebrow">Opening bell</span><h2 id="next-title" data-split>Next on the calendar</h2></div>
           <p>Quizzes, debates and sessions open to students of Amity University Kolkata. <a href="./events/">All events →</a></p>
         </div>
         <div data-render="next-event"></div>
@@ -137,12 +136,12 @@
         </picture>
       </div>
       <div class="container">
-        <span class="eyebrow">04 — Closing bell</span>
-        <h2 id="cta-title" data-split>Earn your <em>seat</em></h2>
+        <span class="eyebrow">Closing bell</span>
+        <h2 id="cta-title" data-split>Earn your seat</h2>
         <p class="lead">Membership is open to students of every department of Amity University Kolkata.</p>
         <div class="btn-row">
-          <a class="btn magnetic" data-join href="./join/">Apply by email <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn btn-secondary magnetic" href="./join/">How joining works</a>
+          <a class="btn" data-join href="./join/">Apply by email <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-secondary" href="./join/">How joining works</a>
         </div>
       </div>
     </section>
