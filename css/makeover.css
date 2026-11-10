@@ -1,0 +1,61 @@
+/* Makeover layer, loaded after main.css.
+   1. Hand-over: when GSAP is running (html.gsap) it owns entrances and
+      scroll motion, so the CSS keyframes, scroll timelines and the
+      IntersectionObserver reveal states are switched off here.
+   2. Fixes from the interface and accessibility review. */
+
+/* ---------- 1. Hand the motion layer to GSAP ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  /* Starting states GSAP animates from; set in CSS so nothing flashes. */
+  html.gsap .hero .mask > .line { animation: none; transform: translateY(105%); }
+  html.gsap .hero .fade-up,
+  html.gsap .hero-meta,
+  html.gsap .page-head .eyebrow,
+  html.gsap .page-head > .container > p { animation: none; opacity: 0; }
+  html.gsap .rosette { animation: none; }
+  html.gsap .rosette path { animation: none; stroke-dasharray: 1; stroke-dashoffset: 1; }
+
+  /* Scroll work moves to ScrollTrigger, which also runs in Safari and Firefox. */
+  html.gsap .lit .w { animation: none; }
+  html.gsap .feature-bg img,
+  html.gsap .cta-bg img,
+  html.gsap .page-head-media img { animation: none; transform: scale(1.12); }
+  html.gsap .band-track { animation: none; }
+  html.gsap [data-split] .word > span { transition: none; }
+  html.gsap.io .reveal { opacity: 1; transform: none; transition: none; }
+}
+/* Wider rail cards on wide screens, so the pinned section has a real
+   sideways journey (motion.js scrolls it; without GSAP it stays a swipe rail). */
+@media (prefers-reduced-motion: no-preference) and (min-width: 900px) {
+  html.gsap .rail { grid-auto-columns: minmax(340px, 44%); }
+}
+
+/* Film grain stays as texture but stops repainting a full-screen layer six
+   times a second. */
+.grain { animation: none !important; }
+
+/* Footer wordmark: a gold fill that ScrollTrigger sweeps in behind the
+   engraved outline (background-position runs 100% → 0%). */
+.wordmark {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 28%, transparent) 50%, transparent 50%) 100% 0 / 200% 100% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ---------- 2. Review fixes ---------- */
+
+/* Smallest text on the site was 8.96px (brand line) and 11.5px (mono labels). */
+.brand-sub { font-size: 0.7rem; letter-spacing: 0.14em; }
+@media (max-width: 400px) { .brand-sub { font-size: 0.66rem; letter-spacing: 0.08em; } }
+.mono, .tag, .ticker { font-size: 0.75rem; }
+
+/* Text links were 17-19px tall; give them a 24px+ hit area without moving the layout. */
+.footer-grid a,
+.manifesto-foot a { display: inline-block; padding-block: 0.3rem; margin-block: -0.3rem; }
+.footer-grid li { margin-bottom: 0.75rem; }
+
+/* Press feedback on every button: a quick 3% squeeze. */
+.btn {
+  transition: color 0.35s var(--ease), border-color 0.35s var(--ease), transform 0.35s var(--ease), scale 0.16s ease-out;
+}
+.btn:active { scale: 0.97; }

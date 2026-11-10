@@ -29,7 +29,9 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/main.css">
-  <script>document.documentElement.className += " js";</script>
+  <link rel="stylesheet" href="../css/makeover.css">
+  <!-- GSAP owns motion when it loads; if it fails, the original CSS motion takes over. -->
+  <script>document.documentElement.className += " js gsap"; setTimeout(function () { if (!window.gsap) document.documentElement.classList.remove("gsap"); }, 2500);</script>
 </head>
 <body data-root="../">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -164,5 +166,8 @@
   </footer>
   <script src="../js/content.js"></script>
   <script src="../js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="../js/motion.js"></script>
 </body>
 </html>
